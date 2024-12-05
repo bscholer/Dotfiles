@@ -2,7 +2,7 @@ FROM fedora:latest
 
 RUN dnf update -y
 
-RUN dnf install -y sudo dialog vim zsh curl wget git sl trash-cli ruby automake gcc gcc-c++ kernel-devel fontconfig passwd htop
+RUN dnf install -y sudo dialog vim zsh curl wget git sl ruby automake gcc gcc-c++ kernel-devel fontconfig passwd htop
 
 RUN dnf update -y
 
@@ -11,3 +11,5 @@ WORKDIR /root
 COPY install.sh ./
 
 RUN ./install.sh
+
+RUN pip install trash-cli

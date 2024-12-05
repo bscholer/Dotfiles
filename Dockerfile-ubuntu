@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get update -y && apt-get upgrade -y
 
-RUN apt-get install -y sudo apt-utils dialog vim zsh curl wget git sl trash-cli ruby-full build-essential fontconfig passwd htop
+RUN apt-get install -y sudo apt-utils dialog vim zsh curl wget git sl ruby-full build-essential fontconfig passwd htop
 
 RUN apt-get install -y dialog apt-utils
 
@@ -15,3 +15,5 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY install.sh ./
 
 RUN ./install.sh
+
+RUN pip install trash-cli
